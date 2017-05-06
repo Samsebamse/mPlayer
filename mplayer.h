@@ -3,13 +3,14 @@
 
 #include <QMainWindow>
 #include <QDebug>
-#include <QFileSystemModel>
 #include <Qstring>
 #include <QLabel>
 #include <QMediaPlayer>
 #include <QMediaPlaylist>
 #include <QSlider>
 #include <Qtime>
+#include <QDragEnterEvent>
+#include <QMimeData>
 
 namespace Ui {
 class mPlayer;
@@ -21,9 +22,8 @@ class mPlayer : public QMainWindow{
 
 private:
     Ui::mPlayer *ui;
-    QFileSystemModel *filemanager;
     QMediaPlayer *player;
-    QModelIndex *index;
+    QMediaPlaylist *playlist;
 
 
 public:
@@ -38,10 +38,13 @@ public:
     QTime durationTime;
     QTime currentTime;
 
+protected:
+    void dragEnterEvent(QDragEnterEvent *event);
+    void dragLeaveEvent(QDragLeaveEvent *event);
+    void dragMoveEvent(QDragMoveEvent *event);
+    void dropEvent(QDropEvent *event);
 
 private slots:
-
-    void on_treeView_clicked(QModelIndex index);
 
     void on_buttonPlay_toggled(bool playing);
 
@@ -53,6 +56,7 @@ private slots:
 
     void on_sliderProgress_sliderMoved(int position);
 
+    void on_listWidget_doubleClicked();
 };
 
 #endif // MPLAYER_H

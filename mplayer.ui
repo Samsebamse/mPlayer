@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>335</width>
-    <height>321</height>
+    <width>311</width>
+    <height>223</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -21,14 +21,7 @@
     <item>
      <layout class="QVBoxLayout" name="verticalLayout_2">
       <item>
-       <widget class="QTreeView" name="treeView">
-        <property name="enabled">
-         <bool>true</bool>
-        </property>
-        <property name="styleSheet">
-         <string notr="true"/>
-        </property>
-       </widget>
+       <widget class="QListWidget" name="listWidget"/>
       </item>
       <item>
        <widget class="QLabel" name="labelSonginfo">
