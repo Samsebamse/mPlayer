@@ -11,6 +11,7 @@
 #include <Qtime>
 #include <QDragEnterEvent>
 #include <QMimeData>
+#include <QMouseEvent>
 
 namespace Ui {
 class mPlayer;
@@ -30,13 +31,13 @@ public:
     explicit mPlayer(QWidget *parent = 0);
     ~mPlayer();
 
-    bool playing = false;
-
     qint64 position;
     QString currentpath;
     QString songinfo;
     QTime durationTime;
     QTime currentTime;
+
+    void displayTrackInfo();
 
 protected:
     void dragEnterEvent(QDragEnterEvent *event);
@@ -57,6 +58,10 @@ private slots:
     void on_sliderProgress_sliderMoved(int position);
 
     void on_listWidget_doubleClicked();
+
+    void on_buttonRepeat_toggled(bool repeating);
+    void on_buttonNext_clicked();
+    void on_buttonBack_clicked();
 };
 
 #endif // MPLAYER_H

@@ -30,4 +30,5 @@ HEADERS  += mplayer.h
 
 FORMS    += mplayer.ui
 
-RESOURCES +=
+RESOURCES += \
+    resources.qrc

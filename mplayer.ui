@@ -6,154 +6,318 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>311</width>
-    <height>223</height>
+    <width>365</width>
+    <height>278</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>mPlayer</string>
   </property>
   <property name="styleSheet">
-   <string notr="true"/>
+   <string notr="true">background-color: #2e2f30;
+color: red;</string>
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QVBoxLayout" name="verticalLayout_3">
     <item>
-     <layout class="QVBoxLayout" name="verticalLayout_2">
+     <widget class="QListWidget" name="listWidget">
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="labelSonginfo">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
       <item>
-       <widget class="QListWidget" name="listWidget"/>
-      </item>
-      <item>
-       <widget class="QLabel" name="labelSonginfo">
+       <widget class="QLabel" name="labelProgress">
         <property name="text">
          <string/>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QSlider" name="sliderProgress">
+       <widget class="QLabel" name="labelSonglength">
+        <property name="text">
+         <string/>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QSlider" name="sliderProgress">
+      <property name="styleSheet">
+       <string notr="true">/* Slider Border */
+QSlider::groove:horizontal {
+border: 1px solid #999999;
+height: 18px;
+
+border-radius: 9px;
+}
+
+/* Slider knob */
+QSlider::handle:horizontal {
+background: gray;
+width: 10px;
+height: 18px;
+}
+
+/* Slider progress */
+QSlider::sub-page:qlineargradient {
+background: #ffa500;
+height: 10px;
+
+}</string>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_4">
+      <item>
+       <spacer name="horizontalSpacer">
         <property name="orientation">
          <enum>Qt::Horizontal</enum>
         </property>
-       </widget>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
       </item>
       <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <layout class="QVBoxLayout" name="verticalLayout_2">
         <item>
-         <widget class="QLabel" name="labelProgress">
-          <property name="text">
-           <string/>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLabel" name="labelSonglength">
-          <property name="text">
-           <string/>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-      <item>
-       <layout class="QHBoxLayout" name="horizontalLayout">
-        <item>
-         <widget class="QPushButton" name="buttonPlay">
-          <property name="text">
-           <string>Play</string>
-          </property>
-          <property name="checkable">
-           <bool>true</bool>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <layout class="QVBoxLayout" name="verticalLayout">
+         <layout class="QHBoxLayout" name="horizontalLayout">
           <item>
-           <widget class="QSlider" name="sliderVolume">
-            <property name="maximum">
-             <number>100</number>
+           <widget class="QPushButton" name="buttonBack">
+            <property name="styleSheet">
+             <string notr="true">background-color: #83b51f</string>
             </property>
-            <property name="pageStep">
-             <number>10</number>
+            <property name="text">
+             <string/>
             </property>
-            <property name="value">
-             <number>0</number>
+            <property name="icon">
+             <iconset resource="resources.qrc">
+              <normaloff>:/icon/ic_skip_previous_black_48dp_1x.png</normaloff>:/icon/ic_skip_previous_black_48dp_1x.png</iconset>
             </property>
-            <property name="sliderPosition">
-             <number>0</number>
-            </property>
-            <property name="tracking">
-             <bool>false</bool>
-            </property>
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="invertedAppearance">
-             <bool>false</bool>
-            </property>
-            <property name="invertedControls">
-             <bool>false</bool>
-            </property>
-            <property name="tickInterval">
-             <number>2</number>
+            <property name="iconSize">
+             <size>
+              <width>20</width>
+              <height>20</height>
+             </size>
             </property>
            </widget>
           </item>
           <item>
-           <widget class="QLabel" name="labelVolume">
+           <widget class="QPushButton" name="buttonPlay">
+            <property name="styleSheet">
+             <string notr="true">background-color: #83b51f</string>
+            </property>
             <property name="text">
              <string/>
             </property>
-            <property name="scaledContents">
-             <bool>false</bool>
+            <property name="icon">
+             <iconset resource="resources.qrc">
+              <normaloff>:/icon/ic_play_arrow_black_48dp_1x.png</normaloff>:/icon/ic_play_arrow_black_48dp_1x.png</iconset>
             </property>
-            <property name="alignment">
-             <set>Qt::AlignBottom|Qt::AlignHCenter</set>
+            <property name="iconSize">
+             <size>
+              <width>20</width>
+              <height>20</height>
+             </size>
             </property>
-            <property name="wordWrap">
-             <bool>false</bool>
+            <property name="checkable">
+             <bool>true</bool>
             </property>
-            <property name="margin">
-             <number>0</number>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="buttonNext">
+            <property name="styleSheet">
+             <string notr="true">background-color: #83b51f</string>
             </property>
-            <property name="indent">
-             <number>-100</number>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="icon">
+             <iconset resource="resources.qrc">
+              <normaloff>:/icon/ic_skip_next_black_48dp_1x.png</normaloff>:/icon/ic_skip_next_black_48dp_1x.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>20</width>
+              <height>20</height>
+             </size>
             </property>
            </widget>
           </item>
          </layout>
         </item>
         <item>
-         <widget class="QPushButton" name="buttonRepeat">
-          <property name="enabled">
-           <bool>true</bool>
-          </property>
-          <property name="text">
-           <string>Repeat</string>
-          </property>
-          <property name="checkable">
-           <bool>true</bool>
-          </property>
-         </widget>
+         <layout class="QHBoxLayout" name="horizontalLayout_3">
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout">
+            <item>
+             <widget class="QSlider" name="sliderVolume">
+              <property name="styleSheet">
+               <string notr="true">/* Slider Border */
+QSlider::groove:horizontal {
+border: 1px solid #999999;
+height: 18px;
+
+border-radius: 9px;
+}
+
+/* Slider knob */
+QSlider::handle:horizontal {
+background: gray;
+width: 10px;
+height: 18px;
+}
+
+/* Slider progress */
+QSlider::sub-page:qlineargradient {
+background: #ffa500;
+height: 10px;
+
+}</string>
+              </property>
+              <property name="maximum">
+               <number>100</number>
+              </property>
+              <property name="pageStep">
+               <number>10</number>
+              </property>
+              <property name="value">
+               <number>0</number>
+              </property>
+              <property name="sliderPosition">
+               <number>0</number>
+              </property>
+              <property name="tracking">
+               <bool>false</bool>
+              </property>
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="invertedAppearance">
+               <bool>false</bool>
+              </property>
+              <property name="invertedControls">
+               <bool>false</bool>
+              </property>
+              <property name="tickInterval">
+               <number>2</number>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="labelVolume">
+              <property name="text">
+               <string/>
+              </property>
+              <property name="scaledContents">
+               <bool>false</bool>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignBottom|Qt::AlignHCenter</set>
+              </property>
+              <property name="wordWrap">
+               <bool>false</bool>
+              </property>
+              <property name="margin">
+               <number>0</number>
+              </property>
+              <property name="indent">
+               <number>-100</number>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="QPushButton" name="buttonRepeat">
+            <property name="enabled">
+             <bool>true</bool>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: #83b51f</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="icon">
+             <iconset resource="resources.qrc">
+              <normaloff>:/icon/ic_replay_black_48dp_1x.png</normaloff>:/icon/ic_replay_black_48dp_1x.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>20</width>
+              <height>20</height>
+             </size>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
         </item>
        </layout>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
       </item>
      </layout>
     </item>
    </layout>
+   <zorder>layoutWidget</zorder>
+   <zorder>layoutWidget</zorder>
+   <zorder>sliderProgress</zorder>
+   <zorder>listWidget</zorder>
+   <zorder>buttonBack</zorder>
+   <zorder>buttonNext</zorder>
+   <zorder>labelVolume</zorder>
+   <zorder>horizontalSpacer</zorder>
+   <zorder>horizontalSpacer_2</zorder>
+   <zorder>labelSonginfo</zorder>
+   <zorder>labelSonglength</zorder>
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources/>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
  <connections/>
 </ui>
