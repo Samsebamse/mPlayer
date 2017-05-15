@@ -12,6 +12,8 @@
 #include <QDragEnterEvent>
 #include <QMimeData>
 #include <QMouseEvent>
+#include <QFileDialog>
+#include <QKeyEvent>
 
 namespace Ui {
 class mPlayer;
@@ -26,42 +28,33 @@ private:
     QMediaPlayer *player;
     QMediaPlaylist *playlist;
 
-
 public:
     explicit mPlayer(QWidget *parent = 0);
     ~mPlayer();
 
-    qint64 position;
-    QString currentpath;
-    QString songinfo;
-    QTime durationTime;
-    QTime currentTime;
-
-    void displayTrackInfo();
 
 protected:
     void dragEnterEvent(QDragEnterEvent *event);
-    void dragLeaveEvent(QDragLeaveEvent *event);
-    void dragMoveEvent(QDragMoveEvent *event);
     void dropEvent(QDropEvent *event);
+    void keyPressEvent(QKeyEvent *event);
 
-private slots:
-
-    void on_buttonPlay_toggled(bool playing);
-
+private slots:   
     void loadSong(qint64 position);
-
     void currentValue(qint64 position);
 
     void on_sliderVolume_sliderMoved(int position);
-
     void on_sliderProgress_sliderMoved(int position);
 
-    void on_listWidget_doubleClicked();
-
-    void on_buttonRepeat_toggled(bool repeating);
+    void on_buttonPlay_toggled(bool play);
+    void on_buttonRepeat_toggled(bool repeat);
+    void on_buttonShuffle_toggled(bool shuffle);
     void on_buttonNext_clicked();
     void on_buttonBack_clicked();
+
+    void on_listWidget_doubleClicked();
+    void on_buttonBrowse_clicked();
+
+
 };
 
 #endif // MPLAYER_H

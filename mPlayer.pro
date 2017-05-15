@@ -32,3 +32,5 @@ FORMS    += mplayer.ui
 
 RESOURCES += \
     resources.qrc
+
+DISTFILES +=

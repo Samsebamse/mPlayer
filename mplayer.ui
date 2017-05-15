@@ -6,28 +6,71 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>365</width>
-    <height>278</height>
+    <width>400</width>
+    <height>300</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>mPlayer</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: #2e2f30;
-color: red;</string>
+   <string notr="true">background-color: #222222;</string>
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QVBoxLayout" name="verticalLayout_3">
     <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_5">
+      <item>
+       <widget class="QPushButton" name="buttonBrowse">
+        <property name="styleSheet">
+         <string notr="true">background-color: #555555;</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="resources.qrc">
+          <normaloff>:/icon/ic_folder_black_48dp_1x.png</normaloff>:/icon/ic_folder_black_48dp_1x.png</iconset>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_3">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>198</width>
+          <height>13</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </item>
+    <item>
      <widget class="QListWidget" name="listWidget">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
       <property name="styleSheet">
-       <string notr="true"/>
+       <string notr="true">background-color: #555555;
+color: #222222;
+font: 20px;
+font-weight: bold;</string>
       </property>
      </widget>
     </item>
     <item>
      <widget class="QLabel" name="labelSonginfo">
+      <property name="styleSheet">
+       <string notr="true">color: #555555;
+font: 16px;</string>
+      </property>
       <property name="text">
        <string/>
       </property>
@@ -40,6 +83,10 @@ color: red;</string>
      <layout class="QHBoxLayout" name="horizontalLayout_2">
       <item>
        <widget class="QLabel" name="labelProgress">
+        <property name="styleSheet">
+         <string notr="true">color: #555555;
+font: 16px;</string>
+        </property>
         <property name="text">
          <string/>
         </property>
@@ -50,6 +97,10 @@ color: red;</string>
       </item>
       <item>
        <widget class="QLabel" name="labelSonglength">
+        <property name="styleSheet">
+         <string notr="true">color: #555555;
+font: 16px;</string>
+        </property>
         <property name="text">
          <string/>
         </property>
@@ -67,8 +118,6 @@ color: red;</string>
 QSlider::groove:horizontal {
 border: 1px solid #999999;
 height: 18px;
-
-border-radius: 9px;
 }
 
 /* Slider knob */
@@ -80,7 +129,7 @@ height: 18px;
 
 /* Slider progress */
 QSlider::sub-page:qlineargradient {
-background: #ffa500;
+background: #177BBD;
 height: 10px;
 
 }</string>
@@ -108,11 +157,11 @@ height: 10px;
       <item>
        <layout class="QVBoxLayout" name="verticalLayout_2">
         <item>
-         <layout class="QHBoxLayout" name="horizontalLayout">
+         <layout class="QHBoxLayout" name="horizontalLayout_3">
           <item>
            <widget class="QPushButton" name="buttonBack">
             <property name="styleSheet">
-             <string notr="true">background-color: #83b51f</string>
+             <string notr="true">background-color: #555555;</string>
             </property>
             <property name="text">
              <string/>
@@ -132,7 +181,7 @@ height: 10px;
           <item>
            <widget class="QPushButton" name="buttonPlay">
             <property name="styleSheet">
-             <string notr="true">background-color: #83b51f</string>
+             <string notr="true">background-color: #555555;</string>
             </property>
             <property name="text">
              <string/>
@@ -155,7 +204,7 @@ height: 10px;
           <item>
            <widget class="QPushButton" name="buttonNext">
             <property name="styleSheet">
-             <string notr="true">background-color: #83b51f</string>
+             <string notr="true">background-color: #555555;</string>
             </property>
             <property name="text">
              <string/>
@@ -175,7 +224,30 @@ height: 10px;
          </layout>
         </item>
         <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_3">
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <item>
+           <widget class="QPushButton" name="buttonShuffle">
+            <property name="styleSheet">
+             <string notr="true">background-color: #555555;</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="icon">
+             <iconset resource="resources.qrc">
+              <normaloff>:/icon/ic_shuffle_black_48dp_1x.png</normaloff>:/icon/ic_shuffle_black_48dp_1x.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>20</width>
+              <height>20</height>
+             </size>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
           <item>
            <layout class="QVBoxLayout" name="verticalLayout">
             <item>
@@ -185,8 +257,6 @@ height: 10px;
 QSlider::groove:horizontal {
 border: 1px solid #999999;
 height: 18px;
-
-border-radius: 9px;
 }
 
 /* Slider knob */
@@ -198,7 +268,7 @@ height: 18px;
 
 /* Slider progress */
 QSlider::sub-page:qlineargradient {
-background: #ffa500;
+background: #177BBD;
 height: 10px;
 
 }</string>
@@ -234,6 +304,10 @@ height: 10px;
             </item>
             <item>
              <widget class="QLabel" name="labelVolume">
+              <property name="styleSheet">
+               <string notr="true">color: #555555;
+font: 16px;</string>
+              </property>
               <property name="text">
                <string/>
               </property>
@@ -262,7 +336,7 @@ height: 10px;
              <bool>true</bool>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color: #83b51f</string>
+             <string notr="true">background-color: #555555;</string>
             </property>
             <property name="text">
              <string/>
@@ -302,17 +376,10 @@ height: 10px;
      </layout>
     </item>
    </layout>
-   <zorder>layoutWidget</zorder>
-   <zorder>layoutWidget</zorder>
    <zorder>sliderProgress</zorder>
    <zorder>listWidget</zorder>
-   <zorder>buttonBack</zorder>
-   <zorder>buttonNext</zorder>
-   <zorder>labelVolume</zorder>
-   <zorder>horizontalSpacer</zorder>
-   <zorder>horizontalSpacer_2</zorder>
    <zorder>labelSonginfo</zorder>
-   <zorder>labelSonglength</zorder>
+   <zorder>listView</zorder>
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
