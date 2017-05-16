@@ -32,7 +32,6 @@ public:
     explicit mPlayer(QWidget *parent = 0);
     ~mPlayer();
 
-
 protected:
     void dragEnterEvent(QDragEnterEvent *event);
     void dropEvent(QDropEvent *event);

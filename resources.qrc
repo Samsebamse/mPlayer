@@ -7,5 +7,6 @@
         <file>icon/ic_skip_previous_black_48dp_1x.png</file>
         <file>icon/ic_shuffle_black_48dp_1x.png</file>
         <file>icon/ic_folder_black_48dp_1x.png</file>
+        <file>icon/music_player.png</file>
     </qresource>
 </RCC>

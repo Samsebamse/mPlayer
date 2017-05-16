@@ -59,7 +59,7 @@ void mPlayer::dropEvent(QDropEvent *event){
     }
 }
 /*
- * Accepting to keyboard events. Delete key to remove all selected widgets.
+ * Accepting keyboard events. Delete key to remove all selected widgets.
  * A foreach loop to seek through all files.
  * Control key enables to select more than one widget in widgetlist.
 */
@@ -76,6 +76,7 @@ void mPlayer::keyPressEvent(QKeyEvent *event){
     else if(event->key() == Qt::Key_Control){
         ui->listWidget->setSelectionMode(QAbstractItemView::ExtendedSelection);
     }
+     ui->listWidget->setSelectionMode(QAbstractItemView::ContiguousSelection);
 }
 /*
  * Setting media player to play or pause state.
@@ -202,8 +203,8 @@ void mPlayer::on_buttonBrowse_clicked(){
                         "Select audiofile(s)",
                         QUrl("C:\\"),
                         "Free Lossless Audio Codec (*.flac);;"
-                        "MPEG-2 Audio Layer III (*.mp3)"
-                        "Waveform Audio File(*.wav);;"
+                        "MPEG-2 Audio Layer III (*.mp3);;"
+                        "Waveform Audio File (*.wav)"
                         );
 
     foreach(QUrl url, list){

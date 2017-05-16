@@ -379,7 +379,6 @@ font: 16px;</string>
    <zorder>sliderProgress</zorder>
    <zorder>listWidget</zorder>
    <zorder>labelSonginfo</zorder>
-   <zorder>listView</zorder>
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
